@@ -1,0 +1,9 @@
+功能实现：
+    实现部分接口的解析获取数据
+
+主要脚本：
+    xiami_audio_spider.py xiami这个类包含所有的函数API
+    xiami_test_secret_parms.py 测试单独api 和 _q生成的加密参数
+
+注意事项：
+    爬取过程中 自己添加代理，频繁访问会滑块验证，其余接口都是一个路子，接口api 以及接口参数
