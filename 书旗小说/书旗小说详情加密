@@ -1,0 +1,14 @@
+直接执行 没加代理，
+加代理
+    use_proxy = True （代理函数 自己添加）
+
+具体能获得的值 已经列好列，主要还是# 上面的加密的地方，参数加密  执行 函数 shuqi_jiami
+                    data = {
+            'user_id': '%s' % (user_id),
+            'bookId': '%s' % (bookId),
+            'timestamp': '%s' % (time_stamp),
+            'sign': '%s' % (self.shuqi_jiami(bookId, time_stamp, user_id=user_id)),
+            'platform': '0'
+        }
+
+后记，真的烦 唯独没有测试md5 我以为不会那么简单的，淦！！！

@@ -97,7 +97,7 @@ class WangYiYun():
         """
         text = '{"hlpretag":"<span class=\\"s-fc7\\">","hlposttag":"</span>","#/discover":"","s":"%s","type":"1","offset":"%s","total":"false","limit":"30","csrf_token":""}'%(name,offset*30)
         # payload = 'params={params}&encSecKey={encSecKey}'.format(params=self.get_params(text),encSecKey=self.encSecKey)
-
+        print(text)
         params = (
             ('csrf_token', ''),
         )
@@ -106,7 +106,7 @@ class WangYiYun():
             'params': self.get_params(text),
             'encSecKey': self.encSecKey
         }
-
+        print(data)
         response = requests.post(self.API_Serch_Songs, headers=self.headers, params=params,
                                  data=data)
         self._dispose(json.loads(response.text))
