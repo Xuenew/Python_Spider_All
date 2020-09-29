@@ -10,7 +10,7 @@ import time
 from hashlib import md5
 
 from fake_useragent import UserAgent
-
+import requests
 # 获取代理
 def get_proxy():
     pass

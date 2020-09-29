@@ -1,0 +1,34 @@
+# 使用手册
+    执行 qidian_novel_info_spider.py
+    更换url 即可
+
+wwOMhmLd
+['.notdef', 'period', 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+GlyphCoordinates([(763, 0),(583, 0),(583, 1147),(518, 1085),(307, 961),(223, 930),(223, 1104),(374, 1175),(600, 1377),(647, 1472),(763, 1472)])
+
+FkMwMtuL
+['.notdef', 'period', 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+GlyphCoordinates([(763, 0),(583, 0),(583, 1147),(518, 1085),(307, 961),(223, 930),(223, 1104),(374, 1175),(600, 1377),(647, 1472),(763, 1472)])
+
+两次结果 发现没有变化 ，但是以防万一，还是进行一个校验 增加一个值的误差值
+
+
+第二次升级，
+每一次 都是下载文件直接比对，这样多进程的时候是会容易出现问题的，同一个文件多次改动
+
+升级 ttfont
+改源代码
+新增 XYYTTFont 函数 （改写了一些 原函数 TTFont）之前是file 地址，现在直接传入文件的 content 流
+
+
+字体加密解决思路 网上一堆，就是字体文件的加密解密
+两个点:
+    world = TTFont('wwOMhmLd.ttf')
+    # print(world.getGlyphOrder()) # 字典的value 字体文件有哪些值 对应的值
+    ['.notdef', 'period', 'zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
+
+    # print(world.getBestCmap()) # 获得对应的字符对应的值
+    {100181: 'two', 100183: 'zero', 100184: 'three', 100185: 'eight', 100186: 'seven', 100187: 'six', 100188: 'period', 100189: 'four', 100190: 'five', 100191: 'nine', 100192: 'one'}
+
+
+
